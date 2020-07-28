@@ -127,11 +127,9 @@ class _addata extends State<addata>
 
                     onPressed: ()
                     {
-                      return FutureBuilder(
+                      tabinit().addata(title,note);
+                      Toast.show('Data Entered', cntxt);
 
-                        future: tabinit().addata(title, note), builder: (BuildContext context, AsyncSnapshot snapshot) {},
-
-                      );
                     },
 
                     child: Text('SUBMIT',style: TextStyle(color: Colors.white,fontSize: 17),),

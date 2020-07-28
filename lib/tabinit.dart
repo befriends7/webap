@@ -16,4 +16,14 @@ class tabinit {
 
   }
 
+  Future<String> getdata(String title) async
+  {
+    var box = await Hive.openBox('data');
+    return box.get(title);
+
+
+  }
+
 }
+
+
