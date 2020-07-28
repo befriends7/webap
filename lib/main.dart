@@ -1,9 +1,11 @@
 import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:toast/toast.dart';
 import 'package:webap/about.dart';
+import 'package:webap/addata.dart';
+import 'package:webap/getdata.dart';
+import 'addata.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,7 +18,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
        routes: {
 
-        '/about':(context)=>about()
+        '/about':(context)=>about(),
+         '/addata':(context)=>addata(),
+         '/getdata':(context)=>getdata()
 
        },
 
@@ -55,7 +59,7 @@ class MyApp extends StatelessWidget {
 
                         onTap: ()
                         {
-                            Toast.show('Clicked',cntxt);
+                            Navigator.pushNamed(cntxt, '/addata');
                         },
 
                         child: GridTile(
@@ -69,7 +73,7 @@ class MyApp extends StatelessWidget {
 
                         onTap: ()
                         {
-
+                            Navigator.pushNamed(cntxt, '/getdata');
                         },
 
                         child: GridTile(
@@ -95,6 +99,8 @@ class MyApp extends StatelessWidget {
                       GestureDetector(
 
                         onTap: (){
+
+                          Navigator.pushNamed(cntxt, '/about');
 
                         },
 
